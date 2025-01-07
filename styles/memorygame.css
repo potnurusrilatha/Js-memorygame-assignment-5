@@ -7,24 +7,22 @@ html {
 }
 
 body {
-    background-color: yellow;
+    background-color: rgb(223, 223, 158);
     margin: 0;
     min-height: 100%;
 }
 
 .header {
-    background-color: rgb(141, 175, 175);
     color: rgb(73, 9, 177);
     text-align: center;
     font-size: 24px;
-
 }
 
 .wrapper {
     box-sizing: content-box;
     width: 28em;
     padding: 2.5em 3em;
-    background-color: #ffff;
+    background-color: #73c3e2;
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -37,7 +35,7 @@ body {
     position: relative;
     width: 100%;
     display: grid;
-    gap : 0.6em;
+    gap: 0.6em;
 }
 
 .starts-container {
@@ -93,14 +91,14 @@ body {
 } */
 
 .card-container.flipped {
-    .card-after  {
+    .card-after {
         transform: rotateY(0deg);
     }
 
     .card-before {
-        transform:rotateY(180deg);
+        transform: rotateY(180deg);
     }
-    
+
 }
 
 .controls-container {
@@ -111,7 +109,7 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: #f4c531;
+    background-color: #63d454;
     top: 0;
 }
 
@@ -120,16 +118,16 @@ body {
     display: block;
     margin: 1.1em auto 0 auto;
     background-color: #0000;
-    color: #ffff;
+    color: #f80a0a;
 }
 
 .controls-container button {
-    font-size: 1.3em;
-    box-shadow: 0 0.6 2em rgba(86, 66, 0, 0.2);
+    font-size: 32px;
+    box-shadow: 0 0.6 2em rgba(189, 171, 113, 0.2);
 }
 
 .hide {
-    display:  none;
+    display: none;
 }
 
 #result {
@@ -145,3 +143,51 @@ body {
     margin: 0.6em 0 1em 0;
 
 }
+
+/*Media Queries */
+@media screen  and (max-width: 768px) {
+    body {
+        min-height: 80%;
+    }
+
+    .header {
+        font-size: 20px;
+    }
+
+    .wrapper {
+        width: 90%;
+        padding: 2.2em 2em; 
+    }
+
+    .game-container {
+        width: 95%;
+        gap: 0.4em;
+    }
+
+    .starts-container {
+        margin-bottom: 1em;
+    }
+
+    .starts-container span {
+        font-weight: 500;
+    }
+
+    .image {
+        width: 90px;
+        height: 90px;
+    }
+
+    #stop {
+        font-size: 1.0em;
+    }
+
+    #result h2 {
+        font-size: 2.2em;
+    }
+
+    #result h4 {
+        font-size: 1.6em;
+    }
+}
+
+

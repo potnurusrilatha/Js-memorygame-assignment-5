@@ -99,38 +99,35 @@ const matrixGenerator = (cardValues, size = 4) => {
 
     //cards
     cards = document.querySelectorAll(".card-container");
-    console.log(cards.length);
     cards.forEach((card) => {
         card.addEventListener("click", () => {
-            console.log("hello");
             if (!card.classList.contains("matched")) {
                 card.classList.add("flipped");
 
                 if (!firstCard) {
-                    
                     firstCard = card;
-                    firstCardValue = card.getAttribute("data-card-value");
+                    firstCardValue = card.getAttribute("data-card-values");
                 } else {
                     movesCounter();
                     secondCard = card;
-                    let secondCardValue = card.getAttribute("data-card-value")
+                    let secondCardValue = card.getAttribute("data-card-values")
                     if (firstCardValue === secondCardValue) {
+
                         firstCard.classList.add("matched")
                         secondCard.classList.add("matched");
                         firstCard = false;
                         winCount += 1;
-                        if (winCount == Math.floor(cardValues.length / 2)) {
+                        if (winCount === Math.floor(cardValues.length / 2)) {
                             result.innerHTML = `<h2>You Won</h2>
                             <h4>Moves: ${movesCount}</h4>`;
                             stopGame();
                         }
                     } else {
-                        console.log("iam checking the bugs");
 
                         let [tempFirst, tempSecond] = [firstCard, secondCard];
                         firstCard = false;
                         secondCard = false;
-                        let delay = setTimeOut(() => {
+                        let delay = setTimeout(() => {
                             tempFirst.classList.remove("flipped");
                             tempSecond.classList.remove("flipped");
                         }, 900);
