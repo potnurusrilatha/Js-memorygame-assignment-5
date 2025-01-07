@@ -13,8 +13,10 @@ body {
 }
 
 .header {
-    background-color: azure;
-    color: aqua;
+    background-color: rgb(141, 175, 175);
+    color: rgb(73, 9, 177);
+    text-align: center;
+    font-size: 24px;
 
 }
 
@@ -54,12 +56,17 @@ body {
     cursor: pointer;
 }
 
+.image {
+    width: 100px;
+    height: 100px;
+}
+
 .card-before,
 .card-after {
     position: absolute;
     border-radius: 5px;
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,15 +85,22 @@ body {
 
 .card-after {
     background-color: #ffff;
-    transform: rotate(180deg);
+    transform: rotateY(180deg);
 }
 
-.card-container.flipped.card-before {
-    transform:rotateY('180deg');
-}
+/* .card-container.flipped.card-before {
+    /transform:rotateY('180deg');
+} */
 
-.card-container.flipped.card-after {
-    transform: rotateY('0deg');
+.card-container.flipped {
+    .card-after  {
+        transform: rotateY(0deg);
+    }
+
+    .card-before {
+        transform:rotateY(180deg);
+    }
+    
 }
 
 .controls-container {
